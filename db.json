@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Keychron K2 Pro",
+      "description": "A compact wireless mechanical keyboard with QMK/VIA support, hot-swappable switches, and a sleek aluminum frame.",
+      "price": 89.99,
+      "category": "keyboards",
+      "image": "https://placehold.co/400x300?text=Keychron+K2+Pro"
+    },
+    {
+      "id": 2,
+      "title": "Logitech MX Keys",
+      "description": "A premium full-size wireless keyboard with backlit keys, perfect for productivity and multi-device use.",
+      "price": 109.99,
+      "category": "keyboards",
+      "image": "https://placehold.co/400x300?text=Logitech+MX+Keys"
+    },
+    {
+      "id": 3,
+      "title": "Ducky One 3",
+      "description": "A high-end mechanical keyboard with PBT keycaps, RGB lighting and a solid build quality loved by enthusiasts.",
+      "price": 119.99,
+      "category": "keyboards",
+      "image": "https://placehold.co/400x300?text=Ducky+One+3"
+    },
+    {
+      "id": 4,
+      "title": "Logitech G Pro X Superlight 2",
+      "description": "An ultra-lightweight wireless gaming mouse weighing under 60g with HERO 25K sensor for precise tracking.",
+      "price": 159.99,
+      "category": "mice",
+      "image": "https://placehold.co/400x300?text=G+Pro+X+Superlight"
+    },
+    {
+      "id": 5,
+      "title": "Razer DeathAdder V3",
+      "description": "An ergonomic wired gaming mouse with Focus Pro 30K optical sensor and lightweight design at 59g.",
+      "price": 69.99,
+      "category": "mice",
+      "image": "https://placehold.co/400x300?text=DeathAdder+V3"
+    },
+    {
+      "id": 6,
+      "title": "Zowie EC2-C",
+      "description": "A professional esports mouse with plug and play simplicity, no software needed, perfect for competitive gaming.",
+      "price": 79.99,
+      "category": "mice",
+      "image": "https://placehold.co/400x300?text=Zowie+EC2-C"
+    },
+    {
+      "id": 7,
+      "title": "SteelSeries QcK Large",
+      "description": "A large cloth mousepad with micro-woven surface for precise tracking and a non-slip rubber base.",
+      "price": 19.99,
+      "category": "mousepads",
+      "image": "https://placehold.co/400x300?text=QcK+Large"
+    },
+    {
+      "id": 8,
+      "title": "Logitech G840 XL",
+      "description": "An extra large gaming mousepad measuring 900x400mm, perfect for low sensitivity gamers with a desk-covering design.",
+      "price": 29.99,
+      "category": "mousepads",
+      "image": "https://placehold.co/400x300?text=Logitech+G840+XL"
+    },
+    {
+      "id": 9,
+      "title": "Artisan Zero Soft XL",
+      "description": "A premium Japanese mousepad with exceptional surface consistency and durability, loved by competitive players worldwide.",
+      "price": 49.99,
+      "category": "mousepads",
+      "image": "https://placehold.co/400x300?text=Artisan+Zero+XL"
+    }
+  ]
+}
