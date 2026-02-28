@@ -9,8 +9,8 @@ export default function useFetch(url) {
   useEffect(() => {
     setLoading(true);
 
-    fetch(url)
-      .then((response) => response.json)
+    fetch(`${url}`)
+      .then((response) => response.json())
       .then((data) => {
         setData(data);
         setLoading(false)
@@ -19,7 +19,7 @@ export default function useFetch(url) {
         setError(error)
         setLoading(false)
       })
-    }, []);
+    }, [url]); //Add your url into the dependency array of the useEffect.
 
   return { data, loading, error };
 }
