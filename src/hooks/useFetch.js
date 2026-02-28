@@ -15,10 +15,10 @@ export default function useFetch(url) {
         setData(data);
         setLoading(false)
       })
-      .catch( error => { 
+      .catch( error => {
         setError(error)
         setLoading(false)
-      } )
+      })
     }, []);
 
   return { data, loading, error };
