@@ -7,6 +7,7 @@ export default function Navbar() {
       <nav className="flex justify-between py-3 px-36 items-center">
         <p className="text-3xl font-extrabold">STORE</p>
         <ul className="flex gap-6 items-center text-xl">
+          {/* THE URLS PASS THE PRODUCT CATEGORIES TO THE PRODUCTS PAGE  */}
           <li>
             <Link to="/">Home</Link>
           </li>
