@@ -14,7 +14,7 @@ export default function Cart() {
         </Link>
       </div>
     )
-
+    
     return (
       <div className="px-36 py-16 text-black max-w-4xl mx-auto">
         <p className="text-red-600 text-xs font-bold tracking-[0.4em] uppercase mb-2">Review</p>

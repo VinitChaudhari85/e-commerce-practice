@@ -5,9 +5,11 @@ import ItemCard from "./ItemCard";
 import { clearCart } from "../store/cartSlice";
 
 export default function Checkout() {
+  //Take the information from the redux store
   const { items, totalAmount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
+  //Define data state first
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +17,8 @@ export default function Checkout() {
     address: "",
     payment: "",
   });
+
+  
 
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);

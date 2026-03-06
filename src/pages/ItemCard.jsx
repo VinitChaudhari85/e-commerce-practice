@@ -4,7 +4,7 @@ import { removeItem } from "../store/cartSlice";
 export default function ItemCard({item}) {
     const dispatch = useDispatch();
     return <div className="flex items-center gap-6 py-6 border-b-2 border-black">
-        <div className="border-2 border-black w-24 h-24 overflow-hidden flex-shrink-0">
+        <div className="border-2 border-black w-24 h-24 overflow-hidden shrink-0">
           <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
         </div>
         <div className="flex-1">
