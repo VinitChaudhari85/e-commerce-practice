@@ -27,9 +27,9 @@ export default function Cart() {
             <p className="text-zinc-500 text-xs font-bold tracking-widest uppercase">Total</p>
             <p className="text-4xl font-black text-white">${totalAmount}</p>
           </div>
-          {/* <Link to="/checkout" className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-sm tracking-widest uppercase px-12 py-4 transition-colors duration-200">
+          <Link to="/checkout" className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-sm tracking-widest uppercase px-12 py-4 transition-colors duration-200">
             Checkout →
-          </Link> */}
+          </Link>
         </div>
       </div>
     )
