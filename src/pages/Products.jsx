@@ -23,14 +23,14 @@ export default function Products() {
   // AND THEN WE ARE SHOWING THOSE SELECTED CATEGORY PRODUCTS ON THE PAGE
   // THIS WAY ONLY ONE PAGE IS REQUIRED WHICH IS USED FOR EVERY CATEGORY INSTEAD OF MAKING INDIVIDUAL PAGES FOR EACH CATEGORY.
 
-  if (loading) return <p className="text-zinc-500 text-sm tracking-widest uppercase text-center mt-20 animate-pulse">Loading...</p>;
-  if (error) return <p className="text-red-400 text-sm tracking-widest uppercase text-center mt-20">Something went wrong!</p>;
+  if (loading) return <p className="text-zinc-400 text-sm tracking-widest uppercase text-center mt-20 animate-pulse">Loading...</p>;
+  if (error) return <p className="text-red-600 text-sm tracking-widest uppercase text-center mt-20">Something went wrong!</p>;
 
   return (
     <div className="flex justify-center pt-12 px-16 pb-20">
       <div>
-        <h1 className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-2">Collection</h1>
-        <h2 className="text-3xl font-black text-white uppercase tracking-tight mb-10">{category}</h2>
+        <h1 className="text-red-600 text-xs font-bold tracking-[0.4em] uppercase mb-2">Collection</h1>
+        <h2 className="text-3xl font-black text-black uppercase tracking-tight mb-10">{category}</h2>
         <div className="grid grid-cols-3 gap-6 content-evenly">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

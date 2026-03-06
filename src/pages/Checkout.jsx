@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import ItemCard from "./ItemCard";
 import { clearCart } from "../store/cartSlice";
 
@@ -52,59 +53,45 @@ export default function Checkout() {
   }
 
   return (
-    <div className="text-white px-36 py-16 max-w-5xl mx-auto">
-      {/* ORDER PLACED MODAL */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-zinc-900 border border-zinc-700 p-16 text-center flex flex-col gap-4 max-w-md w-full">
-            <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase">
-              Success
-            </p>
-            <h2 className="text-4xl font-black text-white uppercase">
-              Order Placed!
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed">
-              Thanks for your order. We'll be in touch soon.
-            </p>
+    <div className="text-black px-36 py-16 max-w-5xl mx-auto">
+
+      {/* ORDER PLACED MODAL — RENDERED VIA PORTAL ABOVE EVERYTHING */}
+      {showModal && createPortal(
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div className="bg-white border-2 border-black p-16 text-center flex flex-col gap-4 max-w-md w-full">
+            <p className="text-red-600 text-xs font-bold tracking-[0.4em] uppercase">Success</p>
+            <h2 className="text-4xl font-black text-black uppercase">Order Placed!</h2>
+            <p className="text-zinc-500 text-sm leading-relaxed">Thanks for your order. We'll be in touch soon.</p>
             <button
               onClick={() => setShowModal(false)}
-              className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-sm tracking-widest uppercase py-3 mt-4 transition-colors duration-200"
+              className="bg-red-600 hover:bg-red-700 text-white font-black text-sm tracking-widest uppercase py-3 mt-4 transition-colors duration-200"
             >
               Close
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/*First we have to show the products, their quantities and prices, and then final amount while checking out*/}
       <div className="mb-16">
-        <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-2">
-          Review
-        </p>
-        <h1 className="text-4xl font-black tracking-tight uppercase mb-8">
-          Items List
-        </h1>
+        <p className="text-red-600 text-xs font-bold tracking-[0.4em] uppercase mb-2">Review</p>
+        <h1 className="text-4xl font-black tracking-tight uppercase mb-8">Items List</h1>
         <div className="mb-6">
           {items.map((item) => (
             <ItemCard key={item.id} item={item} />
           ))}
         </div>
-        <div className="border-t border-zinc-700 pt-6 flex justify-between items-center">
-          <p className="text-zinc-500 text-xs font-bold tracking-widest uppercase">
-            Total
-          </p>
+        <div className="border-t-2 border-black pt-6 flex justify-between items-center">
+          <p className="text-zinc-500 text-xs font-bold tracking-widest uppercase">Total</p>
           <p className="text-3xl font-black">${totalAmount}</p>
         </div>
       </div>
 
       {/* Then we will show the checkout form to the user here */}
       <div>
-        <p className="text-amber-400 text-xs font-bold tracking-[0.4em] uppercase mb-2">
-          Details
-        </p>
-        <h2 className="text-4xl font-black tracking-tight uppercase mb-8">
-          Checkout
-        </h2>
+        <p className="text-red-600 text-xs font-bold tracking-[0.4em] uppercase mb-2">Details</p>
+        <h2 className="text-4xl font-black tracking-tight uppercase mb-8">Checkout</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <input
@@ -113,11 +100,9 @@ export default function Checkout() {
               placeholder="Full name"
               value={formData.name}
               onChange={handleChange}
-              className="bg-zinc-900 border border-zinc-700 focus:border-amber-400 outline-none text-white px-4 py-3 text-sm tracking-wide placeholder:text-zinc-600 w-full"
+              className="bg-white border-2 border-black focus:border-red-600 outline-none text-black px-4 py-3 text-sm tracking-wide placeholder:text-zinc-400 w-full"
             />
-            {errors.name && (
-              <p className="text-red-400 text-xs mt-1">{errors.name}</p>
-            )}
+            {errors.name && <p className="text-red-600 text-xs mt-1">{errors.name}</p>}
           </div>
 
           <div>
@@ -127,11 +112,9 @@ export default function Checkout() {
               placeholder="Email address"
               value={formData.email}
               onChange={handleChange}
-              className="bg-zinc-900 border border-zinc-700 focus:border-amber-400 outline-none text-white px-4 py-3 text-sm tracking-wide placeholder:text-zinc-600 w-full"
+              className="bg-white border-2 border-black focus:border-red-600 outline-none text-black px-4 py-3 text-sm tracking-wide placeholder:text-zinc-400 w-full"
             />
-            {errors.email && (
-              <p className="text-red-400 text-xs mt-1">{errors.email}</p>
-            )}
+            {errors.email && <p className="text-red-600 text-xs mt-1">{errors.email}</p>}
           </div>
 
           <div>
@@ -141,11 +124,9 @@ export default function Checkout() {
               placeholder="Contact number (10 digits)"
               value={formData.contact}
               onChange={handleChange}
-              className="bg-zinc-900 border border-zinc-700 focus:border-amber-400 outline-none text-white px-4 py-3 text-sm tracking-wide placeholder:text-zinc-600 w-full"
+              className="bg-white border-2 border-black focus:border-red-600 outline-none text-black px-4 py-3 text-sm tracking-wide placeholder:text-zinc-400 w-full"
             />
-            {errors.contact && (
-              <p className="text-red-400 text-xs mt-1">{errors.contact}</p>
-            )}
+            {errors.contact && <p className="text-red-600 text-xs mt-1">{errors.contact}</p>}
           </div>
 
           <div>
@@ -155,11 +136,9 @@ export default function Checkout() {
               placeholder="Delivery address"
               value={formData.address}
               onChange={handleChange}
-              className="bg-zinc-900 border border-zinc-700 focus:border-amber-400 outline-none text-white px-4 py-3 text-sm tracking-wide placeholder:text-zinc-600 w-full"
+              className="bg-white border-2 border-black focus:border-red-600 outline-none text-black px-4 py-3 text-sm tracking-wide placeholder:text-zinc-400 w-full"
             />
-            {errors.address && (
-              <p className="text-red-400 text-xs mt-1">{errors.address}</p>
-            )}
+            {errors.address && <p className="text-red-600 text-xs mt-1">{errors.address}</p>}
           </div>
 
           <div>
@@ -167,7 +146,7 @@ export default function Checkout() {
               name="payment"
               value={formData.payment}
               onChange={handleChange}
-              className="bg-zinc-900 border border-zinc-700 focus:border-amber-400 outline-none text-white px-4 py-3 text-sm tracking-wide w-full"
+              className="bg-white border-2 border-black focus:border-red-600 outline-none text-black px-4 py-3 text-sm tracking-wide w-full"
             >
               <option value="">Select payment method</option>
               <option value="upi">UPI</option>
@@ -175,14 +154,12 @@ export default function Checkout() {
               <option value="credit-card">Credit Card</option>
               <option value="cod">Cash on Delivery</option>
             </select>
-            {errors.payment && (
-              <p className="text-red-400 text-xs mt-1">{errors.payment}</p>
-            )}
+            {errors.payment && <p className="text-red-600 text-xs mt-1">{errors.payment}</p>}
           </div>
 
           <button
             type="submit"
-            className="bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-sm tracking-widest uppercase py-4 mt-2 transition-colors duration-200"
+            className="bg-red-600 hover:bg-red-700 text-white font-black text-sm tracking-widest uppercase py-4 mt-2 transition-colors duration-200"
           >
             Place Order
           </button>
