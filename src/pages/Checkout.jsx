@@ -18,8 +18,7 @@ export default function Checkout() {
     payment: "",
   });
 
-  
-
+  //make the states for errors and the modal
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
 
@@ -30,7 +29,7 @@ export default function Checkout() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // VALIDATE FIELDS
+    //Validate the inputs given by the user
     const newErrors = {};
 
     if (/\d/.test(formData.name))
